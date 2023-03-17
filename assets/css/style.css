@@ -1,0 +1,630 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #292b36;
+}
+
+figure {
+    margin: 0;
+}
+
+.body-flex {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e2028;
+}
+
+.img-logo {
+    width: 400px;
+    margin-left: 5px;
+}
+
+.link-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 800px;
+}
+
+.header-link {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 10px;
+
+    font-size: 24px;
+    background-color: rgb(131, 131, 131);
+    border-radius: 10px;
+}
+
+.header-link:hover {
+    font-weight: bold;
+    color: #b60356;
+    box-shadow: 0 0 10px #d90368;
+}
+
+.section-title-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff3f01;
+    padding: 0 100px;
+}
+
+.page-title, .move-link {
+    font-size: 60px;
+	text-shadow: 0px -7px 7px rgba(0, 0, 0, 0.75);
+}
+
+/* *******Formulario********* */
+.form-flex {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 30px;
+}
+
+fieldset {
+    border: none;
+}
+
+.category-flex {
+    width: 1140px;
+    display: flex;
+    justify-content: space-around;
+    color: silver;
+}
+
+label {
+    font-size: 19px;
+}
+
+.input-text {
+    width: 250px;
+    border-radius: 3px;
+    outline: none;
+    border: 0;
+    padding: 3px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 18px;
+}
+
+/* ***********tarjetas********** */
+.card-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    margin: 30px;
+    background-color: silver;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    transition: 200ms;
+}
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card > p {
+    margin: 20px;
+}
+
+.card-image {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.base-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+}
+
+.but-view {
+    border: 1px solid black;
+    padding: 2px;
+    box-shadow: -2px -2px 5px black;
+}
+
+.but-view:hover {
+    color: #b60356;
+    font-weight: bold;
+}
+
+/* *******Table******* */
+table {
+    background-color: silver;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgb(131, 131, 131);
+}
+
+table, td {
+    margin: 50px auto;
+    
+}
+
+th {
+    background-color: rgb(68, 0, 32);
+    font-size: 24px;
+    color: rgb(131, 131, 131);
+}
+
+td {
+    padding: 5px;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(68, 0, 32);
+}
+
+.tdBold {
+    font-weight: bold;
+}
+
+/* ******Contact Form******* */
+.form-flex-contact {
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+}
+
+.contact-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 24px;
+    color: rgb(131, 131, 131);
+}
+
+.contact-input {
+    margin: 4px 0 10px;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 12px;
+    background-color: silver;
+    box-shadow: 0 0 5px #1e2028 inset;
+}
+
+.contact-but {
+    width: 150px;
+    padding: 10px;
+    margin: 0 0 0 auto;
+
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 20px;
+    background-color: rgb(131, 131, 131);
+    border-radius: 10px;
+    border: none;
+}
+
+.contact-but:hover {
+    font-weight: bold;
+    color: #b60356;
+    box-shadow: 0 0 10px #d90368;
+    cursor: pointer;
+}
+
+/* *******Details******** */
+.detail-flex {
+    display: flex;
+    width: 1000px;
+    padding: 20px;
+    margin: 100px auto;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    background-color: rgb(131, 131, 131);
+}
+
+.figure-detail {
+    width: 604px;
+    display: flex;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 8px #121318;
+    overflow: hidden;
+    background-color: #121318;
+}
+
+.img-detail {
+    width: 604px;
+    margin: auto;
+}
+
+.descrip-detail {
+    width: 336px;
+    padding: 0 20px;
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px 8px #121318;
+    border-radius: 10px;
+    background-color: silver;
+    min-height: 370px;
+}
+
+.detail-title {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.descrip-detail>p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.descrip-detail span {
+    font-weight: bold;
+}
+
+
+/* ******Footer******* */
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e2028;
+    border-top: 1px solid #ff3f01;
+}
+
+.foot-fig {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.foot-img {
+    width: 50px;
+}
+.foot-img:hover {
+    transform: scale(1.1);
+}
+
+.foot-title {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.foot-title>h2 {
+    font-size: 40px;
+}
+
+/* para fijar footer abajo con .body-flex */
+.foot-bottom {
+    margin-top: auto;
+}
+
+/* !!!!!!!!!!!!---MEDIA---!!!!!!!!!!!!! */
+
+@media only screen and (max-width: 1370px) {
+    .page-title {
+        margin: 30px 0;
+    }
+
+    .form-flex {
+        padding: 20px 30px;
+    }
+} 
+
+@media only screen and (max-width: 1300px) {
+    .header-flex {
+        flex-direction: column;
+    }
+    
+    .link-flex {
+        margin: 10px auto;
+    }
+
+    .section-title-flex {
+        padding: 0 80px;
+    }
+
+    .form-flex {
+        flex-direction: column;
+    }
+
+    .category-flex {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    .media-search {
+        margin: 0 auto;
+    }
+
+    .foot-fig, .foot-title {
+        width: 30%;
+    }
+
+    table {
+        width: 700px;
+        margin: 30px auto;
+    }
+
+    .detail-flex {
+        width: 800px;
+    }
+    
+    .figure-detail {
+        width: 450px;
+    }
+    
+    .img-detail {
+        width: 450px;
+    }
+    
+    .descrip-detail {
+        width: 320px;
+        min-height: 340px;
+        padding: 0 5px;
+    }
+
+    .detail-title {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .header-flex {
+        align-items: center;
+    }
+
+    .img-logo {
+        margin-left: 0px;
+    }
+    
+    .link-flex {
+        justify-content: space-around;
+        width: 660px;
+    }
+
+    .header-link {
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .section-title-flex {
+        padding: 0 40px;
+    }
+
+    .page-title {
+        font-size: 40px;
+    }
+
+    .category-flex {
+        width: 98%;
+    }
+    
+    label {
+        font-size: 14px;
+    }
+
+    table {
+        width: 450px;
+    }
+
+    th {
+        font-size: 20px;
+    }
+    
+    .contact-flex {
+        width: 400px;
+    }
+
+    textarea {
+        width: 400px;
+    }
+
+    .detail-flex {
+        width: 350px;
+        flex-direction: column;
+        margin: 50px auto;
+    }
+    
+    .figure-detail {
+        width: 350px;
+        margin-right: 0;
+    }
+    
+    .img-detail {
+        width: 350px;
+    }
+    
+    .descrip-detail {
+        width: 310px;
+        margin: 25px auto 0;
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    .link-flex {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .header-link {
+        width: 100%;
+        height: 30px;
+        font-size: 18px;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        text-decoration: underline #b60356;
+    }
+
+    .header-link:hover {
+        box-shadow: unset;
+    }
+
+    .section-title-flex {
+        padding: 0 10px;
+    }
+
+    .page-title, .move-link {
+        text-shadow: 0px -3px 7px rgba(0, 0, 0, 0.75);
+    }
+
+    .form-flex {
+        padding: 10px 0px;
+    }
+
+    .category-flex {
+        width: 365px;
+        flex-wrap: wrap;
+    }
+
+    label {
+        font-size: 18px;
+        width: 120px;
+    }
+
+    label:last-child {
+        margin-right: 243px;
+    }
+
+    .foot-img {
+        width: 40px;
+    }
+
+    .foot-title>h2 {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .img-logo {
+        width: 200px;
+    }
+    
+    .page-title {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .category-flex {
+        width: 300px;
+    }
+
+    label:last-child {
+        margin-right: 150px;
+    }
+
+    .input-text {
+        width: 250px;
+        padding: 5px;
+    }
+    
+    .card {
+        width: 300px;
+        height: 440px;
+    }
+    
+    .card-image {
+        width: 300px;
+        object-fit: unset;
+    }
+   
+    .foot-img {
+        width: 30px;
+    }
+
+    .foot-title>h2 {
+        font-size: 20px;
+    }
+
+    table {
+        width: 95%;
+    }
+    
+    th {
+        font-size: 16px;
+    }
+    
+    td {
+        font-size: 14px;
+    }
+    
+    .contact-flex {
+        width: 300px;
+    }
+
+    textarea {
+        width: 300px;
+    }
+    
+    .contact-label {
+        font-size: 20px;  
+    }
+    
+    .contact-input {
+        font-size: 16px;
+    }
+    
+    .detail-flex {
+        width: 280px;
+        flex-direction: column;
+        margin: 50px auto;
+    }
+    
+    .figure-detail {
+        width: 280px;
+    }
+    
+    .img-detail {
+        width: 280px;
+    }
+    
+    .descrip-detail {
+        width: 240px;
+    }
+    
+    .detail-title {
+        font-size: 24px;
+    }
+    
+    .descrip-detail>p {
+        font-size: 16px;
+    }
+
+    .card > h2 {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
