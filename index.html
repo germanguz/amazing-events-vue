@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/ico_amzg_events.png" type="image/x-icon">
+</head>
+
+<body class="body-flex">
+    <header class="header-flex">
+        <figure>
+            <img class="img-logo" src="./assets/images/logo_amzg_events.png" alt="logo amazing events">
+        </figure>
+        <nav class="link-flex">
+            <a class="header-link" href="#">Home</a>
+            <a class="header-link" href="./upcoming_events.html">Upcoming Events</a>
+            <a class="header-link" href="./past_events.html">Past Events</a>
+            <a class="header-link" href="./stats.html">Stats</a>
+            <a class="header-link" href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- este div es para que funcione VUE -->
+    <div id="app">
+
+
+
+        <main>
+            <!-- MAIN TITLE -->
+            <section class="section-title-flex">
+                <a class="move-link" href="#">&lt;</a>
+                <h1 class="page-title">Home</h1>
+                <a class="move-link" href="./upcoming_events.html">&gt;</a>
+            </section>
+
+            <!-- FORM -->
+            <form class="form-flex" action="./README.md" method="get">
+                <fieldset class="category-flex" id="categoryId">
+                    <!-- *Acá va el código dinámico de categorías -->
+                    
+                    <label v-if="categories" v-for="categoria of categories" :for="categoria">
+                        <input v-on:change="filtrar" v-model="checkedValue" class="check" type="checkbox" name="choose" :id="categoria" :value="categoria">
+                        {{categoria}}</label>
+                        {{checkedValue}}
+
+                </fieldset>
+
+                <fieldset class="media-search">
+                    <input @keyup="filtrar" v-model="searchValue" class="input-text" type="search" placeholder="Search here"
+                        name="searching" id="idSearch">
+                        {{searchValue}}
+                </fieldset>
+            </form>
+
+            <!-- CARD'S -->
+            <div class="card-flex" id="idCard">
+                <!-- *Acá va el código dinámico -->
+                
+                <article v-if="eventosFiltrados" v-for="evento of eventosFiltrados" class="card">
+                    <figure>
+                        <img class="card-image" v-bind:src="evento.image" v-bind:alt="evento.name">
+                    </figure>
+                    <h2>{{evento.name}}</h2>
+                    <p>{{evento.description}}</p>
+                    <div class="base-card">
+                        <p>Price ${{evento.price}}</p>
+                        <a class="but-view" href="./details.html?id=${id}">View more</a>
+                    </div> 
+                </article>
+
+            </div>
+
+        </main>
+
+    <!-- este es el fin del div de VUE -->
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-flex foot-bottom">
+        <figure class="foot-fig">
+            <img class="foot-img" src="./assets/images/instagram.png" alt="Instagram" title="Instagram">
+            <img class="foot-img" src="./assets/images/facebook.png" alt="Facebook" title="Facebook">
+            <img class="foot-img" src="./assets/images/whatsapp.png" alt="whatsApp" title="whatsApp">
+        </figure>
+        <section class="foot-title">
+            <h2>FE05-TN</h2>
+        </section>
+    </footer>
+    <!-- <script src="./assets/scripts/data_ae.js"></script> -->
+    <!-- <script src="./assets/scripts/functions.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+</body>
+
+</html>
