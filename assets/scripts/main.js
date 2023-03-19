@@ -22,7 +22,7 @@ createApp({
                 // con el map creo un array de categorias, con el set, creo un set(que no es un array) de categorias
                 // que no se repitan, con [...] paso el set a un array y lo guardo en categories
                 this.categories = [ ...new Set(this.eventos.map( elemento => elemento.category ))]
-                console.log(this.categories);
+                // console.log(this.categories);
             })
             .catch(error => console.log(error))
     },

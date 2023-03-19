@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/ico_amzg_events.png" type="image/x-icon">
 </head>
-<body>
+
+<body class="body-flex">
+    <header class="header-flex">
+        <figure>
+            <img class="img-logo" src="./assets/images/logo_amzg_events.png" alt="logo amazing events">
+        </figure>
+        <nav class="link-flex">
+            <a class="header-link" href="./index.html">Home</a>
+            <a class="header-link" href="./upcoming_events.html">Upcoming Events</a>
+            <a class="header-link" href="./past_events.html">Past Events</a>
+            <a class="header-link" href="./stats.html">Stats</a>
+            <a class="header-link" href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- este div es para que funcione VUE -->
+    <div id="app">
+        
+        <main>
+            <div v-if="eventDetailAssistance.length > 0"  class="detail-flex" id="container-Detail">
+                <!-- *Acá va el código dinámico de details -->
+
+                <figure class="figure-detail">
+                    <img class="img-detail" :src="eventDetailAssistance.image" :alt="eventDetailAssistance.name">
+                </figure>
+                <article class="descrip-detail">
+                    <h1 class="detail-title">{{eventDetailAssistance.name}}</h1>
+                    <p><span>Date: </span>{{eventDate}}</p>
+                    <p><span>Description: </span>{{eventDetailAssistance.description}}</p>
+                    <p><span>Category: </span>{{eventDetailAssistance.category}}</p>
+                    <p><span>Place: </span>{{eventDetailAssistance.place}}</p>
+                    <p><span>Capacity: </span>{{eventDetailAssistance.capacity}}</p>
+                    <p><span>Assistance: </span>{{eventDetailAssistance.assistance}}</p>
+                    <p><span>Price: </span>${{eventDetailAssistance.price}}</p>
+                </article>
+            </div>
+
+            <div v-else class="detail-flex" id="container-Detail">
+                <!-- *Acá va el código dinámico de details -->
+
+                <figure class="figure-detail">
+                    <img class="img-detail" :src="eventDetailEstimate.image" :alt="eventDetailEstimate.name">
+                </figure>
+                <article class="descrip-detail">
+                    <h1 class="detail-title">{{eventDetailEstimate.name}}</h1>
+                    <p><span>Date: </span>{{eventDate}}</p>
+                    <p><span>Description: </span>{{eventDetailEstimate.description}}</p>
+                    <p><span>Category: </span>{{eventDetailEstimate.category}}</p>
+                    <p><span>Place: </span>{{eventDetailEstimate.place}}</p>
+                    <p><span>Capacity: </span>{{eventDetailEstimate.capacity}}</p>
+                    <p><span>Estimate: </span>{{eventDetailEstimate.estimate}}</p>
+                    <p><span>Price: </span>${{eventDetailEstimate.price}}</p>
+                </article>
+            </div>
+        </main>
     
+    
+    <!-- este es el fin del div de VUE -->
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-flex foot-bottom">
+        <figure class="foot-fig">
+            <img class="foot-img" src="./assets/images/instagram.png" alt="Instagram" title="Instagram">
+            <img class="foot-img" src="./assets/images/facebook.png" alt="Facebook" title="Facebook">
+            <img class="foot-img" src="./assets/images/whatsapp.png" alt="whatsApp" title="whatsApp">
+        </figure>
+        <section class="foot-title">
+            <h2>FE05-TN</h2>
+        </section>
+    </footer>
+
+    <!-- <script src="./assets/scripts/data_ae.js"></script> -->
+    <!-- <script src="./assets/scripts/functions.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/scripts/detail.js"></script>
 </body>
+
 </html>
