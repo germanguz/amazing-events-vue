@@ -30,8 +30,8 @@ createApp({
         filtrar() {
             // si al siguiente filter lo dejo en una sola linea no hace falta el return
             this.eventosFiltrados = this.eventos.filter( evento => {
-                console.log(this.checkedValue);
-                console.log(this.searchValue);
+                // console.log(this.checkedValue);
+                // console.log(this.searchValue);
                 return (this.checkedValue.includes(evento.category) || this.checkedValue.length === 0) && (evento.name.toLowerCase().includes(this.searchValue.toLowerCase()));
             })
         }
