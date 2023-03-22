@@ -123,6 +123,12 @@ label {
 }
 .card:hover {
     transform: scale(1.02);
+    box-shadow: 15px 15px 10px black;
+}
+
+/* para que no se vea una linea blanca alrededor de la imagen */
+.card:hover .card-image {
+    transform: scale(1.005);
 }
 
 .card > p {
@@ -162,9 +168,10 @@ label {
 
 /* *******Table******* */
 table {
-    background-color: silver;
+    background-color: #1e2028;
     border-radius: 10px;
     box-shadow: 0 0 10px 5px rgb(131, 131, 131);
+    color: #d90368;
 }
 
 table, td {
@@ -173,7 +180,7 @@ table, td {
 }
 
 th {
-    background-color: rgb(68, 0, 32);
+    background-color: #121318;
     font-size: 24px;
     color: rgb(131, 131, 131);
 }
