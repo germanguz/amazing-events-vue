@@ -30,7 +30,7 @@
         
         <main>
             <div v-if="Object.keys(eventDetailAssistance).length > 0"  class="detail-flex" id="container-Detail">
-                <!-- *Acá va el código dinámico de details -->
+                <!-- *Acá va el código dinámico de details (para past events usando assistance) -->
 
                 <figure class="figure-detail">
                     <img class="img-detail" :src="eventDetailAssistance.image" :alt="eventDetailAssistance.name">
@@ -48,7 +48,7 @@
             </div>
 
             <div v-else class="detail-flex" id="container-Detail">
-                <!-- *Acá va el código dinámico de details -->
+                <!-- *Acá va el código dinámico de details (para upcoming events usando estimate)-->
 
                 <figure class="figure-detail">
                     <img class="img-detail" :src="eventDetailEstimate.image" :alt="eventDetailEstimate.name">
@@ -83,8 +83,6 @@
         </section>
     </footer>
 
-    <!-- <script src="./assets/scripts/data_ae.js"></script> -->
-    <!-- <script src="./assets/scripts/functions.js"></script> -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/scripts/detail.js"></script>
 </body>

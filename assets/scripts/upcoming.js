@@ -16,10 +16,8 @@ createApp({
         .then(response => response.json())
         .then(data => {
             this.eventsUpcoming = data.events;
-            // console.log(this.eventsUpcoming);
             this.filterEventsUp = this.eventsUpcoming;
             this.categories = [...new Set(this.eventsUpcoming.map(e => e.category))];
-            // console.log(this.categories);
         })
         .catch(error => console.log(error))
     },

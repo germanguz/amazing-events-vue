@@ -30,9 +30,6 @@ createApp({
             categoryUpArrayFilter: [],
             upArrayToPrint: [],
 
-
-            highestEvent: []
-
         }
     },
     created() {
