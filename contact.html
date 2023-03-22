@@ -25,31 +25,37 @@
         </nav>
     </header>
 
-    <main>
-        <!-- MAIN TITLE -->
-        <section class="section-title-flex">
-            <a class="move-link" href="./stats.html">&lt;</a>
-            <h1 class="page-title">Contact</h1>
-            <a class="move-link" href="#">&gt;</a>
-        </section>
+    <!-- acá comienza vue -->
+    <div id="app">
 
-        <!-- FORM -->
-        <form class="form-flex-contact" action="./README.md" method="get">
-            <fieldset class="contact-flex">
-                <label class="contact-label" for="nameId">Name:</label>
-                <input class="contact-input" type="text" name="name" id="nameId">
-                
-                <label class="contact-label" for="emailId">Email:</label>
-                <input class="contact-input" type="email" name="email" id="emailId">
-                
-                <label class="contact-label" for="messageId">Message:</label>
-                <textarea class="contact-input" name="message" id="messageId" cols="50" rows="10"></textarea>
-    
-                <input class="contact-but" type="submit" value="Send">
-            </fieldset>
-        </form>
+        <main>
+            <!-- MAIN TITLE -->
+            <section class="section-title-flex">
+                <a class="move-link" href="./stats.html">&lt;</a>
+                <h1 class="page-title">Contact</h1>
+                <a class="move-link" href="#">&gt;</a>
+            </section>
 
-    </main>
+            <!-- FORM -->
+            <form v-on:submit.prevent="captureData" class="form-flex-contact" action="./README.md" method="get">
+                <fieldset class="contact-flex">
+                    <label class="contact-label" for="nameId">Name:</label>
+                    <input v-model="nameModel" class="contact-input" type="text" name="name" id="nameId">
+
+                    <label class="contact-label" for="emailId">Email:</label>
+                    <input v-model="emailModel" class="contact-input" type="email" name="email" id="emailId">
+
+                    <label class="contact-label" for="messageId">Message:</label>
+                    <textarea v-model="messageModel" class="contact-input" name="message" id="messageId" cols="50" rows="10"></textarea>
+
+                    <input class="contact-but" type="submit" value="Send">
+                </fieldset>
+            </form>
+
+        </main>
+
+    <!-- acá finaliza vue -->
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer-flex foot-bottom">
@@ -63,6 +69,8 @@
         </section>
     </footer>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/scripts/contact.js"></script>
 </body>
 
 </html>
