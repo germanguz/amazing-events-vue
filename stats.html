@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/ico_amzg_events.png" type="image/x-icon">
+</head>
+
+<body class="body-flex">
+    <header class="header-flex">
+        <figure>
+            <img class="img-logo" src="./assets/images/logo_amzg_events.png" alt="logo amazing events">
+        </figure>
+        <nav class="link-flex">
+            <a class="header-link" href="./index.html">Home</a>
+            <a class="header-link" href="./upcoming_events.html">Upcoming Events</a>
+            <a class="header-link" href="./past_events.html">Past Events</a>
+            <a class="header-link" href="#">Stats</a>
+            <a class="header-link" href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- acá comienza Vue -->
+    <div id="app">
+
+        <main>
+            <!-- MAIN TITLE -->
+            <section class="section-title-flex">
+                <a class="move-link" href="./past_events.html">&lt;</a>
+                <h1 class="page-title">Stats</h1>
+                <a class="move-link" href="./contact.html">&gt;</a>
+            </section>
+
+            <!-- Table -->
+            <table>
+                <tbody>
+                    <tr>
+                        <th colspan="3">Events statistics</th>
+
+                    </tr>
+                    <tr>
+                        <td class="tdBold">Events with the highest percentage of attendance</td>
+                        <td class="tdBold">Events with the lowest percentage of attendance</td>
+                        <td class="tdBold">Events with larger capacity</td>
+                    </tr>
+                    <tr>
+                        <td>{{ maxEventAssistance }}</td>
+                        <td>{{ minEventAssistance }}</td>
+                        <td>{{ maxEventCapacity }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ maxAssistancePercent }}% with {{ maxAssistance }} assist </td>
+                        <td>{{ minAssistancePercent }}% with {{ minAssistance }} assist </td>
+                        <td>{{ maxCapacity }}</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="3">Upcoming events statistics by category</th>
+
+                    </tr>
+                    <tr>
+                        <td class="tdBold">Categories</td>
+                        <td class="tdBold">Revenues</td>
+                        <td class="tdBold">Percentage of attendance</td>
+                    </tr>
+                </tbody>
+                
+                <tbody v-if="upArrayToPrint" v-for="each in upArrayToPrint">
+                    <tr>
+                        <td>{{ each.nombre }}</td>
+                        <td>$ {{ each.ganancia }}</td>
+                        <td>{{ each.estimado }} %</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th colspan="3">Past events statistics by category</th>
+
+                    </tr>
+                    <tr>
+                        <td class="tdBold">Categories</td>
+                        <td class="tdBold">Revenues</td>
+                        <td class="tdBold">Percentage of attendance</td>
+                    </tr>
+                </tbody>
+                <tbody v-if="pastArrayToPrint" v-for="element of pastArrayToPrint">
+                    <tr>
+                        <td>{{ element.nombre }}</td>
+                        <td>$ {{ element.ganancia }}</td>
+                        <td>{{ element.asist }} %</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </main>
+
+        <!-- acá termina Vue -->
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-flex foot-bottom">
+        <figure class="foot-fig">
+            <img class="foot-img" src="./assets/images/instagram.png" alt="Instagram" title="Instagram">
+            <img class="foot-img" src="./assets/images/facebook.png" alt="Facebook" title="Facebook">
+            <img class="foot-img" src="./assets/images/whatsapp.png" alt="whatsApp" title="whatsApp">
+        </figure>
+        <section class="foot-title">
+            <h2>FE05-TN</h2>
+        </section>
+    </footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/scripts/stats.js"></script>
+</body>
+
+</html>
