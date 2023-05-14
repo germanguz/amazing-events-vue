@@ -1,5 +1,7 @@
 const { createApp } = Vue
-const urlApi = "https://mindhub-ab35.onrender.com/api/amazing-events";
+// *La siguiente dirección de la api dejó de funcionar, por eso uso el archivo json
+// const urlApi = "https://mindhub-ab35.onrender.com/api/amazing-events";
+const urlApi = "./assets/scripts/all-events.json";
 
 createApp({
     data() {

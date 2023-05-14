@@ -565,7 +565,6 @@ td {
     
     .card-image {
         width: 300px;
-        object-fit: unset;
     }
    
     .foot-img {
