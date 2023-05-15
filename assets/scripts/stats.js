@@ -1,11 +1,13 @@
 const { createApp } = Vue;
 
-const urlApiStatsPast = "https://mindhub-ab35.onrender.com/api/amazing-events?time=past";
-const urlApiStatsUp = "https://mindhub-ab35.onrender.com/api/amazing-events?time=upcoming";
+// const urlApiStatsPast = "https://mindhub-ab35.onrender.com/api/amazing-events?time=past";
+// const urlApiStatsUp = "https://mindhub-ab35.onrender.com/api/amazing-events?time=upcoming";
+const urlApiStats = "./assets/scripts/all-events.json";
 
 createApp({
     data() {
         return {
+            eventsStats: [],
             eventsStatsPast: [],
             eventsStatsUp: [],
             eventsStatsMaxToMinCapacityPast: [],
@@ -37,13 +39,21 @@ createApp({
     },
     methods: {
         async fetchStats() {
-            let response = await fetch(urlApiStatsPast);
+            let response = await fetch(urlApiStats);
             response = await response.json();
-            this.eventsStatsPast = response.events;
+            this.eventsStats = response.events;
 
-            let res = await fetch(urlApiStatsUp);
-            res = await res.json();
-            this.eventsStatsUp = res.events;
+            // let res = await fetch(urlApiStatsUp);
+            // res = await res.json();
+            // this.eventsStatsUp = res.events;
+
+            for (let event of this.eventsStats) {
+                if (event.date > response.currentDate) {
+                    this.eventsStatsUp.push(event);
+                } else {
+                    this.eventsStatsPast.push(event);
+                }
+            }
 
             // !TABLA 1
 

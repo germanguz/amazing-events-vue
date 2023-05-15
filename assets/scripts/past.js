@@ -1,6 +1,6 @@
 const { createApp } = Vue;
 
-const urlApiPast = "https://mindhub-ab35.onrender.com/api/amazing-events?time=past";
+const urlApiPast = "./assets/scripts/all-events.json";
 
 const application = createApp({
     data() {
@@ -22,7 +22,14 @@ const application = createApp({
                 const response = await fetch(urlApiPast);
                 const dataEvents = await response.json();
                 this.eventsPast = dataEvents.events;
-                this.filterEventsPast = this.eventsPast;
+                // this.filterEventsPast = this.eventsPast;
+
+                for (let event of this.eventsPast) {
+                    if (event.date < dataEvents.currentDate) {
+                        this.filterEventsPast.push(event);
+                    }
+                }
+
             } catch (error) {
                 console.log(error);
             }

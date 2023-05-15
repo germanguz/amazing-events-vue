@@ -1,6 +1,6 @@
 const { createApp } = Vue;
 
-const urlApiDetail = "https://mindhub-ab35.onrender.com/api/amazing-events";
+const urlApiDetail = "./assets/scripts/all-events.json";
 
 let query = location.search;
 let params = new URLSearchParams(query);
