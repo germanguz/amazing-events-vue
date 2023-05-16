@@ -16,6 +16,7 @@ createApp({
         }
     },
     created() {
+        // this.backDet();
         fetch(urlApiDetail)
             .then(res => res.json())
             .then(data => {
@@ -35,6 +36,16 @@ createApp({
             .catch(error => {
                 console.log(error);
             })
+
+        
     },
+    methods: {
+        backDet() {
+            window.history.back();
+        } 
+        // = document.querySelector("#detailBackId");
+
+        
+    }
 
 }).mount("#app");
