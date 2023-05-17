@@ -12,22 +12,23 @@ createApp({
         
     },methods: {
         captureData() {
-            console.table({
-                Name: this.nameModel,
-                Mail: this.emailModel,
-                Message: this.messageModel
-            });
-
-            // Muestro los datos cargados en pantalla
-            alert("==== SENT DATA ==== \n -Name: " + this.nameModel + " \n -e-mail: " 
-            + this.emailModel + "\n -Message: " + this.messageModel);
+            // Sweetalert2
+            Swal.fire({
+                icon: 'success',
+                title: 'Resume',
+                background: '#1e2028',
+                color: '#838383',
+                html: `<b>Name:</b> ${this.nameModel} <br><br>
+                <b>E-mail:</b> ${this.emailModel} <br><br>
+                <b>Message:</b> ${this.messageModel}`,
+                confirmButtonColor: '#ff3f01',
+              })
 
             // Reseteo los valores para que se vacíe el formulario
             this.nameModel = "";
             this.emailModel = "";
             this.messageModel = "";
         }
-        // alert(JSON.stringify(obj))   para que no muestre (Object object)
     }
 
 }).mount("#app");
