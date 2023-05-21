@@ -29,8 +29,6 @@
     <!-- este div es para que funcione VUE -->
     <div id="app">
 
-
-
         <main>
             <!-- MAIN TITLE -->
             <section class="section-title-flex">
@@ -39,29 +37,35 @@
                 <a class="move-link" href="./upcoming_events.html">&gt;</a>
             </section>
 
+            <!-- LOADER -->
+            <div id="loaderContainerId">
+                <div id="loaderId"></div>
+            </div>
+
             <!-- FORM -->
             <form class="form-flex" action="./README.md" method="get">
                 <fieldset class="category-flex" id="categoryId">
                     <!-- *Acá va el código dinámico de categorías -->
-                    
+
                     <label v-if="categories" v-for="categoria of categories" :for="categoria">
-                        <input v-on:change="filtrar" v-model="checkedValue" class="check" type="checkbox" name="choose" :id="categoria" :value="categoria">
+                        <input v-on:change="filtrar" v-model="checkedValue" class="check" type="checkbox" name="choose"
+                            :id="categoria" :value="categoria">
                         {{categoria}}</label>
-                        <!-- {{checkedValue}} (permite ver los valores de la fc en el html) -->
+                    <!-- {{checkedValue}} (permite ver los valores de la fc en el html) -->
 
                 </fieldset>
 
                 <fieldset class="media-search">
-                    <input @keyup="filtrar" v-model="searchValue" class="input-text" type="search" placeholder="Search here"
-                        name="searching" id="idSearch">
-                        <!-- {{searchValue}} (permite ver los valores de la fc en el html) -->
+                    <input @keyup="filtrar" v-model="searchValue" class="input-text" type="search"
+                        placeholder="Search here" name="searching" id="idSearch">
+                    <!-- {{searchValue}} (permite ver los valores de la fc en el html) -->
                 </fieldset>
             </form>
 
             <!-- CARD'S -->
             <div class="card-flex" id="idCard">
                 <!-- *Acá va el código dinámico -->
-                
+
                 <!-- el boolean de un array vacío da true, por eso se pone .length > 0 -->
                 <article v-if="eventosFiltrados.length > 0" v-for="evento of eventosFiltrados" class="card">
                     <figure>
@@ -73,9 +77,9 @@
                         <p>Price ${{evento.price}}</p>
                         <!-- comillas dentro de comillas -->
                         <a class="but-view" :href="'./details.html?id=' + evento.id">View more</a>
-                    </div> 
+                    </div>
                 </article>
-                
+
                 <!-- en caso de no encontrar nada. Uso el v-else -->
                 <article v-else class="card">
                     <figure>
@@ -83,13 +87,13 @@
                     </figure>
                     <h2>No event found!</h2>
                     <h3>Try again with other words :)</h3>
-                     
+
                 </article>
 
             </div>
         </main>
 
-    <!-- este es el fin del div de VUE -->
+        <!-- este es el fin del div de VUE -->
     </div>
 
     <!-- FOOTER -->

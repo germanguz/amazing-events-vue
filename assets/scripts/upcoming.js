@@ -30,6 +30,12 @@ createApp({
             }
             // *copia del array obtenido para imprimir
             this.filterEventsUp = this.eventsUpcoming.slice();
+
+            // *Para ocultar el loader
+            let contenedor = document.getElementById("loaderContainerId");
+            contenedor.style.transition = "all 0.5s ease";
+            contenedor.style.visibility = "hidden";
+            contenedor.style.opacity = "0";
         })
         .catch(error => console.log(error))
     },
