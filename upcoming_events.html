@@ -28,7 +28,10 @@
     <!-- este div es para que funcione VUE -->
     <div id="app">
         <!-- ahora la fc está en computed y no en methods, no se usan los v-on y debo agregar esta fc en el html -->
-        {{ filtrarUp }}
+        <!-- la encerré en un div para, con estilos, ocultarla porque sino se ve en el html al cargar -->
+        <div class="hidden-fc-filtrar">
+            {{ filtrarUp }}
+        </div>
 
         <main>
             <!-- MAIN TITLE -->
@@ -37,6 +40,11 @@
                 <h1 class="page-title">Upcoming Events</h1>
                 <a class="move-link" href="./past_events.html">&gt;</a>
             </section>
+
+            <!-- LOADER -->
+            <div id="loaderContainerId">
+                <div id="loaderId"></div>
+            </div>
 
             <!-- FORM -->
             <form class="form-flex" action="./README.md" method="get">

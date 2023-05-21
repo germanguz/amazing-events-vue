@@ -5,6 +5,7 @@ const urlApiPast = "./assets/scripts/all-events.json";
 const application = createApp({
     data() {
         return {
+            allEvents: [],
             eventsPast: [],
             categories: [],
             searchValue: "",
@@ -21,14 +22,21 @@ const application = createApp({
             try {
                 const response = await fetch(urlApiPast);
                 const dataEvents = await response.json();
-                this.eventsPast = dataEvents.events;
+                this.allEvents = dataEvents.events;
                 // this.filterEventsPast = this.eventsPast;
 
-                for (let event of this.eventsPast) {
+                for (let event of this.allEvents) {
                     if (event.date < dataEvents.currentDate) {
                         this.filterEventsPast.push(event);
                     }
                 }
+                this.eventsPast = this.filterEventsPast.slice();
+
+                // Para ocultar el loader
+                let contenedor = document.getElementById("loaderContainerId");
+                contenedor.style.transition = "all 0.5s ease";
+                contenedor.style.visibility = "hidden";
+                contenedor.style.opacity = "0";
 
             } catch (error) {
                 console.log(error);
